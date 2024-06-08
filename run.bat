@@ -41,6 +41,9 @@ echo POSTGRES_USER=!POSTGRES_USER!
 echo POSTGRES_DB=!POSTGRES_DB!
 echo POSTGRES_PASSWORD=!POSTGRES_PASSWORD!
 
+:: Установить переменную среды PGPASSWORD
+set PGPASSWORD=%POSTGRES_PASSWORD%
+
 :: Создать файл .env с переменными среды, если он не существует
 if not exist .env (
     echo Создание файла .env
@@ -51,16 +54,29 @@ if not exist .env (
     ) > .env
 )
 
-
 :: Установить виртуальное окружение, если еще не установлено
 if not exist "venv\Scripts\activate" (
-    python -m venv venv
+    if not exist ".venv\Scripts\activate" (
+        python -m venv venv
+    ) else (
+        set VENV_PATH=.venv
+    )
+) else (
+    set VENV_PATH=venv
 )
 
+if "%VENV_PATH%"=="" set VENV_PATH=venv
+
 :: Активировать виртуальное окружение
-call venv\Scripts\activate
+call %VENV_PATH%\Scripts\activate
 
 :: Проверить наличие зависимостей и установить их при необходимости
+pip show psycopg2 >nul 2>&1
+if errorlevel 1 (
+    echo Установка psycopg2
+    call pip install psycopg2
+)
+
 pip show uvicorn >nul 2>&1
 if errorlevel 1 (
     echo Установка зависимостей
@@ -76,9 +92,6 @@ set POSTGRES_USER=%POSTGRES_USER%
 set POSTGRES_DB=%POSTGRES_DB%
 set POSTGRES_PASSWORD=%POSTGRES_PASSWORD%
 set DATABASE_URL=postgresql://%POSTGRES_USER%:%POSTGRES_PASSWORD%@localhost:5432/%POSTGRES_DB%
-
-:: Установить переменную среды PGPASSWORD
-set PGPASSWORD=%POSTGRES_PASSWORD%
 
 :: Проверить состояние сервера базы данных и остановить, если он запущен
 %PG_CTL% -D %PG_DATA% status >nul 2>&1
@@ -98,14 +111,17 @@ if errorlevel 1 (
 )
 
 :: Проверить, существуют ли таблицы и восстановить базу данных из дампа, если таблицы отсутствуют
-psql -U %POSTGRES_USER% -h localhost -d %POSTGRES_DB% -c "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'petsitters' AND table_name = 'gamequestion');" | findstr /C:"t" >nul
+psql -U %POSTGRES_USER% -h localhost -d %POSTGRES_DB% -c "SELECT to_regclass('petsitters.gamequestion')" | findstr /C:"petsitters.gamequestion" >nul
 if errorlevel 1 (
     echo Восстановление базы данных из дампа
     pg_restore -U %POSTGRES_USER% -h localhost -d %POSTGRES_DB% "database_dump.sql"
 )
 
-:: Запустить сервер
-call uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+:: Инициализация colorama
+call python -c "import colorama; colorama.init()"
+
+:: Запустить сервер FastAPI
+call %VENV_PATH%\Scripts\uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 :: Оставить консоль открытой
 pause
