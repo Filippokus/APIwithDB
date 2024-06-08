@@ -41,13 +41,16 @@ echo POSTGRES_USER=!POSTGRES_USER!
 echo POSTGRES_DB=!POSTGRES_DB!
 echo POSTGRES_PASSWORD=!POSTGRES_PASSWORD!
 
-:: Создать файл .env с переменными среды
-echo Создание файла .env
-(
-echo SECRET_KEY=804876b6a4ef870e7bfda138fc037dc4b746cb3aea222ad6a14913f6597ccfc9
-echo DATABASE_URL=postgresql://%POSTGRES_USER%:%POSTGRES_PASSWORD%@localhost:5432/%POSTGRES_DB%
-echo DEBUG=True
-) > .env
+:: Создать файл .env с переменными среды, если он не существует
+if not exist .env (
+    echo Создание файла .env
+    (
+    echo SECRET_KEY=804876b6a4ef870e7bfda138fc037dc4b746cb3aea222ad6a14913f6597ccfc9
+    echo DATABASE_URL=postgresql://%POSTGRES_USER%:%POSTGRES_PASSWORD%@localhost:5432/%POSTGRES_DB%
+    echo DEBUG=True
+    ) > .env
+)
+
 
 :: Установить виртуальное окружение, если еще не установлено
 if not exist "venv\Scripts\activate" (
@@ -57,8 +60,14 @@ if not exist "venv\Scripts\activate" (
 :: Активировать виртуальное окружение
 call venv\Scripts\activate
 
-:: Установить зависимости
-call pip install -r requirements.txt
+:: Проверить наличие зависимостей и установить их при необходимости
+pip show uvicorn >nul 2>&1
+if errorlevel 1 (
+    echo Установка зависимостей
+    call pip install -r requirements.txt
+) else (
+    echo Зависимости уже установлены
+)
 
 :: Установить переменные среды для подключения к PostgreSQL
 set PG_CTL="%PG_CTL_PATH%"
@@ -67,6 +76,13 @@ set POSTGRES_USER=%POSTGRES_USER%
 set POSTGRES_DB=%POSTGRES_DB%
 set POSTGRES_PASSWORD=%POSTGRES_PASSWORD%
 set DATABASE_URL=postgresql://%POSTGRES_USER%:%POSTGRES_PASSWORD%@localhost:5432/%POSTGRES_DB%
+
+:: Проверить состояние сервера базы данных и остановить, если он запущен
+%PG_CTL% -D %PG_DATA% status >nul 2>&1
+if %errorlevel% == 0 (
+    echo Сервер базы данных запущен, останавливаем его.
+    %PG_CTL% -D %PG_DATA% stop
+)
 
 :: Запустить сервер базы данных
 %PG_CTL% -D %PG_DATA% start
@@ -79,7 +95,7 @@ if errorlevel 1 (
 )
 
 :: Проверить, существуют ли таблицы и восстановить базу данных из дампа, если таблицы отсутствуют
-psql -U %POSTGRES_USER% -h localhost -d %POSTGRES_DB% -c "\dt" | findstr /C:"gamequestion" >nul
+psql -U %POSTGRES_USER% -h localhost -d %POSTGRES_DB% -c "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'petsitters' AND table_name = 'gamequestion');" | findstr /C:"t" >nul
 if errorlevel 1 (
     echo Восстановление базы данных из дампа
     pg_restore -U %POSTGRES_USER% -h localhost -d %POSTGRES_DB% "database_dump.sql"
