@@ -77,6 +77,9 @@ set POSTGRES_DB=%POSTGRES_DB%
 set POSTGRES_PASSWORD=%POSTGRES_PASSWORD%
 set DATABASE_URL=postgresql://%POSTGRES_USER%:%POSTGRES_PASSWORD%@localhost:5432/%POSTGRES_DB%
 
+:: Установить переменную среды PGPASSWORD
+set PGPASSWORD=%POSTGRES_PASSWORD%
+
 :: Проверить состояние сервера базы данных и остановить, если он запущен
 %PG_CTL% -D %PG_DATA% status >nul 2>&1
 if %errorlevel% == 0 (
