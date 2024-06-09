@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, UniqueConstraint, MetaData
+from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, UniqueConstraint, MetaData
 from sqlalchemy.orm import relationship
 from app.database import Base
 
@@ -24,7 +24,7 @@ class GameAnswer(Base):
     answerid = Column(Integer, primary_key=True, autoincrement=True, index=True)
     questionid = Column(Integer, ForeignKey('petsitters.gamequestion.questionid'), index=True)
     answertext = Column(String, index=True)
-    score = Column(Float, index=True)
+    is_correct = Column(Boolean, index=True)
 
     question = relationship("GameQuestion", back_populates="answers")
 
@@ -54,7 +54,7 @@ class UserAnswer(Base):
     userid = Column(Integer, ForeignKey('petsitters.user.userid'), primary_key=True, index=True)
     questionid = Column(Integer, ForeignKey('petsitters.gamequestion.questionid'), primary_key=True, index=True)
     answertext = Column(String, index=True)
-    score = Column(Float, index=True)
+    score = Column(Integer, index=True)
 
     user = relationship("User", back_populates="answers")
     question = relationship("GameQuestion", back_populates="user_answers")
