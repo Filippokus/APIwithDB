@@ -1,0 +1,491 @@
+{
+  "answers": [
+    {
+      "answerid": 1,
+      "questionid": 1,
+      "answertext": "была ли ранее собака на передержке?",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 1,
+      "answertext": "есть у собаки страхи, тревожность или агрессия?",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 1,
+      "answertext": "грызет ли собака вещи дома, разрушает ли имущество когда остается одна?",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 1,
+      "answertext": "есть ли какие-то проблемы со здоровьем и аллергии?",
+      "is_correct": true
+    },
+    {
+      "answerid": 5,
+      "questionid": 1,
+      "answertext": "привита ли собака в соответствии с возрастом?",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 2,
+      "answertext": "познакомиться с владельцем и спросить подробно про собаку",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 2,
+      "answertext": "подготовить квартиру, убрать все ценные вещи повыше, а обувь в шкаф, спрятать все провода",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 2,
+      "answertext": "купить побольше еды, позвать гостей и устроить вечеринку",
+      "is_correct": false
+    },
+    {
+      "answerid": 4,
+      "questionid": 2,
+      "answertext": "прибраться перед приездом собаки",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 3,
+      "answertext": "выйти на улицу и познакомить собак на нейтральной территории, все собаки на поводке",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 3,
+      "answertext": "в квартире, все собаки без поводков",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 3,
+      "answertext": "на улице, собаки могут быть без поводков",
+      "is_correct": false
+    },
+    {
+      "answerid": 1,
+      "questionid": 4,
+      "answertext": "собака со сложным характером, боится людей и недоверчива",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 4,
+      "answertext": "раннее во время передержки между ситтером и собакой были разногласия",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 4,
+      "answertext": "собака с агрессией и трудным характером",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 4,
+      "answertext": "владелец убедится, что собака будет жить в комфорте, в чистоте, помещение соответствует описанию, лично познакомиться с догситтером и появится больше доверия к вам",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 5,
+      "answertext": "без поводков в свободном выгуле",
+      "is_correct": false
+    },
+    {
+      "answerid": 2,
+      "questionid": 5,
+      "answertext": "подводим собак всегда на расслабленных поводках",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 5,
+      "answertext": "не имеет значения, натягивает собака поводок или нет",
+      "is_correct": false
+    },
+    {
+      "answerid": 4,
+      "questionid": 5,
+      "answertext": "нужно крепко держать собаку за поводок и подтягивать ее вверх чтобы она не рвалась",
+      "is_correct": false
+    },
+    {
+      "answerid": 1,
+      "questionid": 6,
+      "answertext": "убрать все ценные вещи повыше, убрать провода, убрать бытовую химию в шкафы",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 6,
+      "answertext": "убрать еду повыше и мусорное ведро спрятать в шкафе",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 6,
+      "answertext": "позвать гостей, устроить вечернику в честь нового гостя",
+      "is_correct": false
+    },
+    {
+      "answerid": 4,
+      "questionid": 6,
+      "answertext": "помыть квартиру с дезинфицирующими средствами, проветрить и убрать все опасные предметы",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 7,
+      "answertext": "радостно кричать, наклоняться сверху чтобы погладить, пытаться сразу обнимать собаку",
+      "is_correct": false
+    },
+    {
+      "answerid": 2,
+      "questionid": 7,
+      "answertext": "активно гладить собаку по голове, интенсивно ее массировать и громко говорить",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 7,
+      "answertext": "спокойно поприветствовать собаку, присесть на ее уровень боком к ней и протянуть к ней руку ладонью вверх, дать собаке понюхать свою руку",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 7,
+      "answertext": "не пытаться гладить сразу собаку, не претендовать на ее личные границы и дать собаке время самой проявить к вам интерес",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 8,
+      "answertext": "вести себя спокойно, все движения медленные и уверенные",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 8,
+      "answertext": "взять в руку лакомство, присесть к собаке боком и на вытянутой руке протянуть лакомство, не глядя ей в глаза",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 8,
+      "answertext": "не пытаться ее гладить, не смотреть пристально в глаза, не нависать над собакой, встать к собаке боком или спиной",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 8,
+      "answertext": "начнет много говорить с собакой, пытаться ее гладить и успокаивать",
+      "is_correct": false
+    },
+    {
+      "answerid": 1,
+      "questionid": 9,
+      "answertext": "лизательный коврик",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 9,
+      "answertext": "флисовый канатик",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 9,
+      "answertext": "нюхательный коврик или мяч",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 9,
+      "answertext": "конг и другие игрушки из мягкой резины",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 10,
+      "answertext": "заранее попросить владельца подготовить долгоиграющие лакомства (бычий корень, уши, нос, трахея, рубец)",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 10,
+      "answertext": "если владелец привез антистресс игрушки, то подготовить Конг и лизательный коврик с паштетом",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 10,
+      "answertext": "вывести на длительную прогулку около 1 часа в тихий и спокойный двор, поиграть с собакой, взять с собой лакомства и воду",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 10,
+      "answertext": "создать спокойную и комфортную атмосферу дома, без шума и громкой музыки, не давать дополнительной нагрузки для нервной системы",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 11,
+      "answertext": "начать ругать и кричать на собаку за лай",
+      "is_correct": false
+    },
+    {
+      "answerid": 2,
+      "questionid": 11,
+      "answertext": "закрыть ее в комнате и уйти по делам",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 11,
+      "answertext": "помочь ей отвлечься, дать ей лизательный коврик с паштетом или Конг или долгоиграющее лакомство - если они есть",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 11,
+      "answertext": "можно предложить поиграть в паттерн игры и переключить внимание на лакомство и контакт с вами",
+      "is_correct": true
+    },
+    {
+      "answerid": 5,
+      "questionid": 11,
+      "answertext": "вывести на длительную прогулку в тихое место, взять игрушки, лакомство и воду",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 12,
+      "answertext": "заранее узнать делает ли так собака у владельца в дома, если да то как владелец себя ведет?",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 12,
+      "answertext": "наругать ее за это и отпугнуть бросив какой-то предмет",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 12,
+      "answertext": "шлепнуть тапком или газетой",
+      "is_correct": false
+    },
+    {
+      "answerid": 4,
+      "questionid": 12,
+      "answertext": "переключить внимание на взаимодействие с вами, не ругать и не кричать на собаку, такое поведение говорит о тревоге и нервном напряжении, поэтому лучше вывести на улицу и спокойно подольше погулять",
+      "is_correct": true
+    },
+    {
+      "answerid": 5,
+      "questionid": 12,
+      "answertext": "написать владельцу и решить с владельцем как лучше поступить, возможно временно ограничить проход к дивану или в какую-то комнату, но при этом заняться состоянием собаки через паттерн игры и совместные прогулки, сделать массаж расслабляющий дома для собаки чтобы ее успокоить",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 13,
+      "answertext": "для щенка нужно больше внимания и времени",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 13,
+      "answertext": "щенок может погрызть мебель, испортить вещи",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 13,
+      "answertext": "сделать лужи и кучки мимо пеленки или там где ему захочется",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 13,
+      "answertext": "нужно чаще кормить и чаще гулять, больше уделять времени",
+      "is_correct": true
+    },
+    {
+      "answerid": 5,
+      "questionid": 13,
+      "answertext": "щенка не оставить одного надолго, чаще всего нужно быть с ним дома",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 14,
+      "answertext": "2-3 раза в день",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 14,
+      "answertext": "раз в неделю",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 14,
+      "answertext": "1-2 раза в день с описанием того как прошел день у собаки, как она себя чувствует, хорошо ли ест, ходит в туалет",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 14,
+      "answertext": "узнать у владельца как часто он хочет получать фото и видео своей собаки",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 15,
+      "answertext": "позвонить в PETSITTER и владельцу, при первых признаках заболевания",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 15,
+      "answertext": "не давать никаких лекарств самостоятельно без обсуждения с владельцем и осмотра ветеринарного врача",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 15,
+      "answertext": "отвезти на прием к ветеринарному врачу у которого наблюдается собака или в ближайшую ветеринарную клинику",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 15,
+      "answertext": "записывать в блокнот симптомы которые вы заметили и как часто они проявлялись",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 16,
+      "answertext": "быстро и уверенно взять руками и открыть пасть держа за верхнюю челюсть одной рукой и другой рукой достать предмет из пасти, после этого выбросить предмет в мусорку",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 16,
+      "answertext": "накричать на собаку и наругать",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 16,
+      "answertext": "забрать из пасти опасный предмет и наругать собаку и шлепнуть поводком",
+      "is_correct": false
+    },
+    {
+      "answerid": 1,
+      "questionid": 17,
+      "answertext": "можно только на закрытой площадке для собак",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 17,
+      "answertext": "узнать у владельца разрешает ли он так делать и только на закрытой площадке для собак",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 17,
+      "answertext": "да можно, поиграют и все, никуда не денется",
+      "is_correct": false
+    },
+    {
+      "answerid": 4,
+      "questionid": 17,
+      "answertext": "нельзя, собака на передержке должна выгуливаться только на поводке, даже если владелец просит об обратном, все равно нет, исключения закрытые площадки для собак",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 18,
+      "answertext": "побегу за ней, чтобы поймать",
+      "is_correct": false
+    },
+    {
+      "answerid": 2,
+      "questionid": 18,
+      "answertext": "буду кричать «ко мне» и стоять на месте",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 18,
+      "answertext": "буду спокоен, присяду на корточки и добрым голосом буду заманивать к себе показывая в руке лакомство, шурша пакетиком, делая вид что все в порядке, смотри у меня для тебя есть угощение или поманю игрушкой или палкой чтобы она прибежала ко мне поиграть",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 18,
+      "answertext": "буду кричать и просить окружающих поймать собаку",
+      "is_correct": false
+    },
+    {
+      "answerid": 1,
+      "questionid": 19,
+      "answertext": "отсматривать собак на наличие повреждений, царапин и ссадин, а также на наличие клещей",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 19,
+      "answertext": "мыть лапы и вытирать их насухо",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 19,
+      "answertext": "кормить собаку",
+      "is_correct": true
+    },
+    {
+      "answerid": 4,
+      "questionid": 19,
+      "answertext": "высылать фото и видео владельцу",
+      "is_correct": true
+    },
+    {
+      "answerid": 1,
+      "questionid": 20,
+      "answertext": "можно",
+      "is_correct": false
+    },
+    {
+      "answerid": 2,
+      "questionid": 20,
+      "answertext": "нельзя",
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 20,
+      "answertext": "нужно узнать у владельца разрешает ли он",
+      "is_correct": false
+    }
+  ]
+}
+

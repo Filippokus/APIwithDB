@@ -1,9 +1,14 @@
-from fastapi import APIRouter, Depends, HTTPException
+import json
+from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 
 from app import schemas
 from app.database import get_db
-from app.crud.game_answers import get_game_answer, get_game_answers, create_game_answer, delete_game_answer, delete_all_answers_for_question
+from app.crud.game_answers import get_game_answer, get_game_answers, create_game_answer, delete_game_answer, \
+    delete_all_answers_for_question, create_multiple_game_answers
+from app.schemas import GameAnswerCreate, GameAnswersCreate
 
 router = APIRouter(tags=["Game Answers"])
 
@@ -41,6 +46,21 @@ def create_game_answer_endpoint(answer: schemas.GameAnswerCreate, db: Session = 
     """
     return create_game_answer(db, answer=answer)
 
+
+@router.post("/add_answers_from_file/", response_model=List[GameAnswerCreate])
+async def add_answers_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    """
+    Загрузить все ответы в базу данных из файла
+    """
+    try:
+        file_content = await file.read()
+        answers_data = json.loads(file_content)
+        answers_schema = GameAnswersCreate(**answers_data)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid JSON file")
+
+    answers = create_multiple_game_answers(db, answers_schema.answers)
+    return answers
 
 """DELETE"""
 

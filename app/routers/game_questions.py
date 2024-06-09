@@ -1,10 +1,14 @@
-from fastapi import APIRouter, Depends, HTTPException
+import json
+from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app import schemas
 from app.database import get_db
-from app.crud.game_questions import get_game_questions, get_game_question, create_game_question
+from app.crud.game_questions import get_game_questions, get_game_question, create_game_question, create_multiple_game_questions
+from app.schemas import GameQuestionsCreate
 
 router = APIRouter(tags=["Game Questions"])
 
@@ -53,3 +57,18 @@ def create_game_question_endpoint(question: schemas.GameQuestionCreate, db: Sess
         Создать новый вопрос для игры.
     """
     return create_game_question(db, question=question)
+
+@router.post("/add_questions/", response_model=List[schemas.GameQuestionCreate])
+async def add_questions_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    """
+    Загрузить все вопросы в базу данных из файла
+    """
+    try:
+        file_content = await file.read()
+        questions_data = json.loads(file_content)
+        question_schema = GameQuestionsCreate(**questions_data)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid JSON file")
+
+    questions = create_multiple_game_questions(db, question_schema.questions)
+    return questions

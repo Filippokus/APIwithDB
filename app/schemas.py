@@ -7,7 +7,7 @@ class GameAnswer(BaseModel):
     answerid: int
     questionid: int
     answertext: str
-    score: float
+    is_correct: bool
 
     class Config:
         from_attributes = True
@@ -17,10 +17,13 @@ class GameAnswerCreate(BaseModel):
     answerid: int
     questionid: int
     answertext: str
-    score: float
+    is_correct: bool
     
     class Config:
         from_attributes = True
+
+class GameAnswersCreate(BaseModel):
+    answers: List[GameAnswerCreate]
 
 class GameQuestion(BaseModel):
     questionid: int
@@ -42,12 +45,15 @@ class GameQuestionCreate(BaseModel):
     class Config:
         from_attributes = True
 
+class GameQuestionsCreate(BaseModel):
+    questions: List[GameQuestionCreate]
+
 
 class UserAnswer(BaseModel):
     userid: int
     questionid: int
     answertext: str
-    score: float
+    score: int
 
     class Config:
         from_attributes = True

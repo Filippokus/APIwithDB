@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, UniqueConstraint, MetaData
+from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, UniqueConstraint, MetaData, \
+    PrimaryKeyConstraint
 from sqlalchemy.orm import relationship
 from app.database import Base
 
@@ -21,8 +22,8 @@ class GameAnswer(Base):
         {'schema': 'petsitters'}
     )
 
-    answerid = Column(Integer, primary_key=True, autoincrement=True, index=True)
-    questionid = Column(Integer, ForeignKey('petsitters.gamequestion.questionid'), index=True)
+    answerid = Column(Integer, primary_key=True, index=True)
+    questionid = Column(Integer, ForeignKey('petsitters.gamequestion.questionid'), primary_key=True, index=True)
     answertext = Column(String, index=True)
     is_correct = Column(Boolean, index=True)
 

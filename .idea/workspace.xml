@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Отредактирован файл run.bat">
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Изменена модель таблиц GameAnswer.is_correct(Bool), UserAnswer.score(Int)">
+      <change afterPath="$PROJECT_DIR$/answers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/18c369db0ae6_update_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/18c369db0ae6_update_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,14 +121,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717831990050</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Изменена модель таблиц GameAnswer.is_correct(Bool), UserAnswer.score(Int)">
+      <option name="closed" value="true" />
+      <created>1717937338214</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717937338214</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создан API" />
     <MESSAGE value="Отредактирован файл run.bat, изменен README.md" />
     <MESSAGE value="Отредактирован файл run.bat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Отредактирован файл run.bat" />
+    <MESSAGE value="Изменена модель таблиц GameAnswer.is_correct(Bool), UserAnswer.score(Int)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменена модель таблиц GameAnswer.is_correct(Bool), UserAnswer.score(Int)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
