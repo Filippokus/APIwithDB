@@ -18,6 +18,7 @@ cd <ваша директория>
 git clone https://github.com/Filippokus/APIwithDB
 ```
 ### 2. Создайте файл `.env` в корне проекта и укажите следующие переменные:
+В `DATABASE_URL` оставьте порт `5432`.
 ```makefile
 DATABASE_URL=postgresql://postgres:postgrespass@db:5432/petsitters
 POSTGRES_USER=postgres (по умолчанию)

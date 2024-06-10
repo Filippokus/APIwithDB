@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="commit, фикс и добавление новых маршрутов. Добавлены answers.json и questions.json">
-      <change afterPath="$PROJECT_DIR$/database/Dockerfile" afterDir="false" />
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Проект развернут в Docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/alembic.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/answers.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/answers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_dump.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/questions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +131,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717972572826</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Проект развернут в Docker">
+      <option name="closed" value="true" />
+      <created>1718061825571</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718061825571</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Проект развернут в Docker">
+      <option name="closed" value="true" />
+      <created>1718061975543</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718061975543</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,7 +156,8 @@
     <MESSAGE value="Отредактирован файл run.bat" />
     <MESSAGE value="Изменена модель таблиц GameAnswer.is_correct(Bool), UserAnswer.score(Int)" />
     <MESSAGE value="commit, фикс и добавление новых маршрутов. Добавлены answers.json и questions.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit, фикс и добавление новых маршрутов. Добавлены answers.json и questions.json" />
+    <MESSAGE value="Проект развернут в Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Проект развернут в Docker" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
