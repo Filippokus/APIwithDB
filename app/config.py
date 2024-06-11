@@ -1,14 +1,20 @@
-import os
-from dotenv import load_dotenv
-
-# Загрузить переменные окружения из файла .env
-load_dotenv()
+from pydantic_settings import BaseSettings
 
 
-class Settings:
-    SECRET_KEY: str = os.getenv("SECRET_KEY")
-    DATABASE_URL: str = os.getenv("DATABASE_URL")
-    DEBUG: bool = os.getenv("DEBUG", "False").lower() in ("true", "1", "t")
+class Settings(BaseSettings):
+    POSTGRES_DB: str
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_HOST: str
+    DB_HOST_PORT: str
+    # DB_CONTAINER_PORT: str
+    API_HOST_PORT: str
+    # API_CONTAINER_PORT: str
+    DEBUG: bool = True
+    POSTGRES_DEBUG: bool = True
+
+    class Config:
+        env_file = ".env"
 
 
 settings = Settings()

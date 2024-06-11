@@ -58,17 +58,17 @@ def create_game_question_endpoint(question: schemas.GameQuestionCreate, db: Sess
     """
     return create_game_question(db, question=question)
 
-@router.post("/add_questions/", response_model=List[schemas.GameQuestionCreate])
-async def add_questions_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
-    """
-    Загрузить все вопросы в базу данных из файла
-    """
-    try:
-        file_content = await file.read()
-        questions_data = json.loads(file_content)
-        question_schema = GameQuestionsCreate(**questions_data)
-    except Exception:
-        raise HTTPException(status_code=400, detail="Invalid JSON file")
-
-    questions = create_multiple_game_questions(db, question_schema.questions)
-    return questions
+# @router.post("/add_questions/", response_model=List[schemas.GameQuestionCreate])
+# async def add_questions_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
+#     """
+#     Загрузить все вопросы в базу данных из файла
+#     """
+#     try:
+#         file_content = await file.read()
+#         questions_data = json.loads(file_content)
+#         question_schema = GameQuestionsCreate(**questions_data)
+#     except Exception:
+#         raise HTTPException(status_code=400, detail="Invalid JSON file")
+#
+#     questions = create_multiple_game_questions(db, question_schema.questions)
+#     return questions
