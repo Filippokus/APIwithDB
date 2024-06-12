@@ -2,64 +2,53 @@ from typing import Optional, List
 
 from pydantic import BaseModel, EmailStr
 
-
-class GameAnswer(BaseModel):
+class BaseModelGame(BaseModel):
+    class Config:
+        from_attributes = True
+class GameAnswer(BaseModelGame):
     answerid: int
     questionid: int
     answertext: str
     is_correct: bool
 
-    class Config:
-        from_attributes = True
 
-
-class GameAnswerCreate(BaseModel):
+class GameAnswerCreate(BaseModelGame):
     answerid: int
     questionid: int
     answertext: str
     is_correct: bool
-    
-    class Config:
-        from_attributes = True
 
-class GameAnswersCreate(BaseModel):
+
+class GameAnswersCreate(BaseModelGame):
     answers: List[GameAnswerCreate]
 
-class GameQuestion(BaseModel):
+class GameQuestion(BaseModelGame):
     questionid: int
     questiontext: str
+    chapter: str
 
-    class Config:
-        from_attributes = True
 
 class GameQuestionDetail(GameQuestion):
     answers: Optional[List[GameAnswer]] = []
 
-    class Config:
-        from_attributes = True
-
 
 class GameQuestionCreate(BaseModel):
     questiontext: str
+    chapter: str
 
-    class Config:
-        from_attributes = True
 
-class GameQuestionsCreate(BaseModel):
+class GameQuestionsCreate(BaseModelGame):
     questions: List[GameQuestionCreate]
 
 
-class UserAnswer(BaseModel):
+class UserAnswer(BaseModelGame):
     userid: int
     questionid: int
     answertext: str
     score: int
 
-    class Config:
-        from_attributes = True
 
-
-class User(BaseModel):
+class User(BaseModelGame):
     userid: int
     fullname: str
     phone: str
@@ -67,29 +56,18 @@ class User(BaseModel):
     profession: str
     currentgamequestionid: Optional[int]
 
-    class Config:
-        from_attributes = True
 
-
-class UserCreate(BaseModel):
+class UserCreate(BaseModelGame):
     fullname: str
     phone: str
     email: EmailStr
     profession: str
     currentgamequestionid: Optional[int]
 
-    class Config:
-        from_attributes = True
 
-class UserUpdate(BaseModel):
+class UserUpdate(BaseModelGame):
     fullname: str
     phone: str
     email: EmailStr
     profession: str
     currentgamequestionid: Optional[int]
-
-    class Config:
-        from_attributes = True
-
-
-

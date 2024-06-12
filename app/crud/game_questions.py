@@ -2,6 +2,7 @@ from typing import List
 
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from app import schemas
 from app.crud.game_answers import delete_all_answers_for_question
 from app.models import GameQuestion
@@ -20,26 +21,41 @@ def get_game_question_by_id(db: Session, questionid: int):
     return db.query(GameQuestion).filter(GameQuestion.questionid == questionid).first()
 
 def get_existing_questions(db: Session, questions: List[GameQuestionCreate]):
-    question_texts = [question.question_text for question in questions]
+    question_texts = [question.questiontext for question in questions]
     existing_questions = db.query(GameQuestion).filter(GameQuestion.questiontext.in_(question_texts)).all()
-    return set(question.question_text for question in existing_questions)
+    return set(question.questiontext for question in existing_questions)
 
 def create_game_question(db: Session, question: schemas.GameQuestionCreate):
     new_question = GameQuestion(
-        questiontext=question.questiontext
+        questiontext=question.questiontext,
+        chapter=question.chapter
     )
     db.add(new_question)
     db.commit()
     db.refresh(new_question)
     return new_question
 
+
+def reset_questionid_sequence(db: Session):
+    reset_sequence_query = text("ALTER SEQUENCE petsitters.gamequestion_questionid_seq RESTART WITH 1;")
+    db.execute(reset_sequence_query)
+    db.commit()
+
+
 def create_multiple_game_questions(db: Session, questions: List[GameQuestionCreate]):
+    # Проверка, если таблица пустая
+    if not db.query(GameQuestion).count():
+        reset_questionid_sequence(db)
+
     existing_questions_set = get_existing_questions(db, questions)
 
     new_questions = []
     for question in questions:
-        if question.question_text not in existing_questions_set:
-            new_question = GameQuestion(questiontext=question.question_text)
+        if question.questiontext not in existing_questions_set:
+            new_question = GameQuestion(
+                questiontext=question.questiontext,
+                chapter=question.chapter
+            )
             new_questions.append(new_question)
 
     if new_questions:
@@ -55,3 +71,9 @@ def delete_game_question(db: Session, questionid: int):
     db.delete(question)
     db.commit()
     return question
+
+def questions_by_chapter(db: Session, chapter: str):
+    questions = db.query(GameQuestion).filter(GameQuestion.chapter == chapter).all()
+    if not questions:
+        raise HTTPException(status_code=404, detail=f"Questions with chapter '{chapter}' not found")
+    return questions

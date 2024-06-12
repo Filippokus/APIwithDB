@@ -9,7 +9,7 @@ from app import schemas
 from app.crud.game_answers import delete_all_answers_for_question
 from app.database import get_db
 from app.crud.game_questions import (get_game_questions, get_game_question, create_game_question,
-                                     create_multiple_game_questions, delete_game_question)
+                                     create_multiple_game_questions, delete_game_question, questions_by_chapter)
 from app.schemas import GameQuestionsCreate
 
 router = APIRouter(tags=["Game Questions"])
@@ -50,6 +50,14 @@ def read_game_detail_question(question_id: int, db: Session = Depends(get_db)):
     return question_detail
 
 
+@router.get("/questions/chapter/{chapter}", response_model=List[schemas.GameQuestionDetail])
+def get_questions_by_chapter(chapter: str, db: Session = Depends(get_db)):
+    """
+    Получить все вопросы для указанной главы.
+    """
+    return questions_by_chapter(db, chapter)
+
+
 """POST"""
 
 
@@ -60,20 +68,20 @@ def create_game_question_endpoint(question: schemas.GameQuestionCreate, db: Sess
     """
     return create_game_question(db, question=question)
 
-# @router.post("/add_questions/", response_model=List[schemas.GameQuestionCreate])
-# async def add_questions_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
-#     """
-#     Загрузить все вопросы в базу данных из файла
-#     """
-#     try:
-#         file_content = await file.read()
-#         questions_data = json.loads(file_content)
-#         question_schema = GameQuestionsCreate(**questions_data)
-#     except Exception:
-#         raise HTTPException(status_code=400, detail="Invalid JSON file")
-#
-#     questions = create_multiple_game_questions(db, question_schema.questions)
-#     return questions
+@router.post("/add_questions/", response_model=List[schemas.GameQuestionCreate])
+async def add_questions_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    """
+    Загрузить все вопросы в базу данных из файла
+    """
+    try:
+        file_content = await file.read()
+        questions_data = json.loads(file_content)
+        question_schema = schemas.GameQuestionsCreate(**questions_data)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid JSON file: {str(e)}")
+
+    questions = create_multiple_game_questions(db, questions=question_schema.questions)
+    return questions
 
 
 """DELETE"""

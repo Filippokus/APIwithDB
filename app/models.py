@@ -11,6 +11,7 @@ class GameQuestion(Base):
 
     questionid = Column(Integer, primary_key=True, autoincrement=True, index=True)
     questiontext = Column(String, index=True)
+    chapter = Column(String, index=True, nullable=False, default="General")
 
     answers = relationship("GameAnswer", back_populates="question")
     user_answers = relationship("UserAnswer", back_populates="question")
