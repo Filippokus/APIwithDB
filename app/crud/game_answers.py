@@ -3,6 +3,7 @@ from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from app import schemas
+
 from app.models import GameAnswer
 from app.schemas import GameAnswerCreate
 
@@ -30,6 +31,11 @@ def get_existing_answers(db: Session, answers: List[GameAnswerCreate]) -> set:
     return existing_answers_set
 
 def create_game_answer(db: Session, answer: schemas.GameAnswerCreate):
+    from app.crud.game_questions import get_game_question_by_id
+    
+    if not get_game_question_by_id(db, questionid=answer.questionid):
+        raise HTTPException(status_code=404, detail="Question not found")
+
     existing_answer = get_game_answer_by_id(db, answer.answerid, answer.questionid)
     if existing_answer:
         raise HTTPException(status_code=400, detail="Answer with this ID and Question ID already exists")
@@ -44,6 +50,8 @@ def create_game_answer(db: Session, answer: schemas.GameAnswerCreate):
     db.commit()
     db.refresh(new_answer)
     return new_answer
+
+
 
 def create_multiple_game_answers(db: Session, answers: List[GameAnswerCreate]):
     existing_answers_set = get_existing_answers(db, answers)
@@ -75,7 +83,7 @@ def delete_game_answer(db: Session, answerid: int, questionid: int):
     return answer
 
 def delete_all_answers_for_question(db: Session, questionid: int):
-    num_deleted = db.query(GameAnswer).filter(GameAnswer.questionid == questionid).delete()
+    num_deleted = (db.query(GameAnswer).filter(GameAnswer.questionid == questionid)).delete()
     db.commit()
     return num_deleted
 

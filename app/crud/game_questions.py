@@ -3,6 +3,7 @@ from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from app import schemas
+from app.crud.game_answers import delete_all_answers_for_question
 from app.models import GameQuestion
 from app.schemas import GameQuestionCreate
 
@@ -46,3 +47,11 @@ def create_multiple_game_questions(db: Session, questions: List[GameQuestionCrea
         db.commit()
 
     return new_questions
+
+def delete_game_question(db: Session, questionid: int):
+    question = get_game_question_by_id(db, questionid)
+    if not question:
+        raise HTTPException(status_code=404, detail="Question not found")
+    db.delete(question)
+    db.commit()
+    return question

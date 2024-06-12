@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Небольшое обновление, читать в README.md">
-      <change afterPath="$PROJECT_DIR$/images/screenshot_docker.png" afterDir="false" />
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/18c369db0ae6_update_models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/36e050a26136_baseline.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/5420975bfce7_drop_tables_in_public_schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/907f43226796_add_new_field_to_gamequestion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_answers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_secret_key.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +161,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718063481654</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Небольшое обновление, читать в README.md">
+      <option name="closed" value="true" />
+      <created>1718143120579</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718143120579</updated>
+    </task>
+    <task id="LOCAL-00012" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1718143210924</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718143210924</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -185,7 +189,8 @@
     <MESSAGE value="Проект развернут в Docker" />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Небольшое обновление, читать в README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Небольшое обновление, читать в README.md" />
+    <MESSAGE value="README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

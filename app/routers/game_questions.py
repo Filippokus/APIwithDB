@@ -6,8 +6,10 @@ from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app import schemas
+from app.crud.game_answers import delete_all_answers_for_question
 from app.database import get_db
-from app.crud.game_questions import get_game_questions, get_game_question, create_game_question, create_multiple_game_questions
+from app.crud.game_questions import (get_game_questions, get_game_question, create_game_question,
+                                     create_multiple_game_questions, delete_game_question)
 from app.schemas import GameQuestionsCreate
 
 router = APIRouter(tags=["Game Questions"])
@@ -72,3 +74,14 @@ def create_game_question_endpoint(question: schemas.GameQuestionCreate, db: Sess
 #
 #     questions = create_multiple_game_questions(db, question_schema.questions)
 #     return questions
+
+
+"""DELETE"""
+
+@router.delete("delete_question/{questionid}", response_model=schemas.GameQuestion)
+def delete_game_question_endpoint(question_id: int, db: Session = Depends(get_db)):
+    """
+    Удалить вопрос по его идентификатору
+    """
+    delete_all_answers_for_question(db, question_id)
+    return delete_game_question(db, question_id)
