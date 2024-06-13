@@ -1,6 +1,27 @@
 from sqlalchemy.orm import Session
-from app import schemas
-from app.models import UserAnswer
+from fastapi import HTTPException
 
-def get_user_answers(db: Session):
-    return db.query(UserAnswer).all()
+from app.models import UserAnswer
+from app.schemas.user_game_answer_schema import UserAnswerCreate
+
+
+def create_user_answer(db: Session, user_answer: UserAnswerCreate):
+
+    #  Проверяем существует ли такая запись в БД
+    existing_user_answer = db.query(UserAnswer).filter(
+        UserAnswer.userid == user_answer.userid,
+        UserAnswer.questionid == user_answer.questionid
+    ).first()
+
+    if existing_user_answer:
+        raise HTTPException(status_code=400, detail="Answer for this user and question already exists.")
+
+    db_user_answer = UserAnswer(
+        userid=user_answer.userid,
+        questionid=user_answer.questionid,
+        score=user_answer.score
+    )
+    db.add(db_user_answer)
+    db.commit()
+    db.refresh(db_user_answer)
+    return db_user_answer

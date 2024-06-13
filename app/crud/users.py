@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from app.models import User
-from app.schemas.user_schema import UserCreate, UserUpdate
+from app.schemas.user_schema import UserCreate
 
 
 def get_users(db: Session):
@@ -33,22 +33,16 @@ def create_user(db: Session, user: UserCreate):
     db.refresh(new_user)
     return new_user
 
-def update_user(db: Session, user_id: int, user: UserUpdate):
-    up_user = get_user_by_id(db, user_id=user_id)
-    if not up_user:
+
+def update_user_current_question(db: Session, user_id: int, current_question_id: int):
+    user = db.query(User).filter(User.userid == user_id).first()
+    if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
-    if user.email:
-        existing_user = get_user_by_email(db, email=user.email)
-        if existing_user and existing_user.userid != user_id:
-            raise HTTPException(status_code=404, detail="Email already registered")
-        
-    for key, value in user.dict(exclude_unset=True).items():
-        setattr(up_user, key, value)
-
+    user.currentgamequestionid = current_question_id
     db.commit()
-    db.refresh(up_user)
-    return up_user
+    db.refresh(user)
+    return user
 
 def delete_user(db: Session, user_id: int):
     del_user = get_user_by_id(db, user_id=user_id)

@@ -19,10 +19,7 @@ class UserCreate(BaseModelGame):
     profession: str
     currentgamequestionid: Optional[int]
 
-
-class UserUpdate(BaseModelGame):
-    fullname: str
-    phone: str
-    email: EmailStr
-    profession: str
+class UserUpdateCurrentQuestion(BaseModelGame):
     currentgamequestionid: Optional[int]
+
+

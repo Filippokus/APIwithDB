@@ -399,90 +399,108 @@
     {
       "answerid": 1,
       "questionid": 17,
+      "answertext": "быстро и уверенно взять руками и открыть пасть держа за верхнюю челюсть одной рукой и другой рукой достать предмет из пасти, после этого выбросить предмет в мусорку",
+      "is_correct": true
+    },
+    {
+      "answerid": 2,
+      "questionid": 17,
+      "answertext": "накричать на собаку и наругать",
+      "is_correct": false
+    },
+    {
+      "answerid": 3,
+      "questionid": 17,
+      "answertext": "забрать из пасти опасный предмет и наругать собаку и шлепнуть поводком",
+      "is_correct": false
+    },
+    {
+      "answerid": 1,
+      "questionid": 18,
       "answertext": "можно только на закрытой площадке для собак",
       "is_correct": true
     },
     {
       "answerid": 2,
-      "questionid": 17,
+      "questionid": 18,
       "answertext": "узнать у владельца разрешает ли он так делать и только на закрытой площадке для собак",
       "is_correct": true
     },
     {
       "answerid": 3,
-      "questionid": 17,
+      "questionid": 18,
       "answertext": "да можно, поиграют и все, никуда не денется",
       "is_correct": false
     },
     {
       "answerid": 4,
-      "questionid": 17,
+      "questionid": 18,
       "answertext": "нельзя, собака на передержке должна выгуливаться только на поводке, даже если владелец просит об обратном, все равно нет, исключения закрытые площадки для собак",
       "is_correct": true
     },
     {
       "answerid": 1,
-      "questionid": 18,
+      "questionid": 19,
       "answertext": "побегу за ней, чтобы поймать",
       "is_correct": false
     },
     {
       "answerid": 2,
-      "questionid": 18,
+      "questionid": 19,
       "answertext": "буду кричать «ко мне» и стоять на месте",
       "is_correct": false
     },
     {
       "answerid": 3,
-      "questionid": 18,
+      "questionid": 19,
       "answertext": "буду спокоен, присяду на корточки и добрым голосом буду заманивать к себе показывая в руке лакомство, шурша пакетиком, делая вид что все в порядке, смотри у меня для тебя есть угощение или поманю игрушкой или палкой чтобы она прибежала ко мне поиграть",
       "is_correct": true
     },
     {
       "answerid": 4,
-      "questionid": 18,
+      "questionid": 19,
       "answertext": "буду кричать и просить окружающих поймать собаку",
       "is_correct": false
     },
     {
       "answerid": 1,
-      "questionid": 19,
+      "questionid": 20,
       "answertext": "отсматривать собак на наличие повреждений, царапин и ссадин, а также на наличие клещей",
       "is_correct": true
     },
     {
       "answerid": 2,
-      "questionid": 19,
+      "questionid": 20,
       "answertext": "мыть лапы и вытирать их насухо",
       "is_correct": true
     },
     {
       "answerid": 3,
-      "questionid": 19,
+      "questionid": 20,
       "answertext": "кормить собаку",
       "is_correct": true
     },
     {
       "answerid": 4,
-      "questionid": 19,
+      "questionid": 20,
       "answertext": "высылать фото и видео владельцу",
       "is_correct": true
     },
     {
       "answerid": 1,
-      "questionid": 20,
+      "questionid": 21,
       "answertext": "можно",
       "is_correct": false
     },
     {
       "answerid": 2,
-      "questionid": 20,
+      "questionid": 21,
       "answertext": "нельзя",
       "is_correct": true
     },
     {
       "answerid": 3,
-      "questionid": 20,
+      "questionid": 21,
       "answertext": "нужно узнать у владельца разрешает ли он",
       "is_correct": false
     }

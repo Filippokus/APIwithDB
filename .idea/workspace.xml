@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="commit. Подробности в README.md">
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Добавлен middleware">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/user_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/user_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/user_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/game_asnwer_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/game_answer_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/game_question_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/game_question_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user_game_answer_chema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_game_answer_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonfiles/answers.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/answers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonfiles/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/questions.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718279337649</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Добавлен middleware">
+      <option name="closed" value="true" />
+      <created>1718280049930</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718280049930</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,7 +239,8 @@
     <MESSAGE value="README.md" />
     <MESSAGE value="Удаление вопроса по id" />
     <MESSAGE value="commit. Подробности в README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit. Подробности в README.md" />
+    <MESSAGE value="Добавлен middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен middleware" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

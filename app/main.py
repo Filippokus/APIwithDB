@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import game_questions, game_answers, users
+from app.routers import game_questions, game_answers, users, user_answers
 from app.config import settings
 
 app = FastAPI()
@@ -27,6 +27,7 @@ app.add_middleware(
 app.include_router(game_questions.router, prefix="/api")
 app.include_router(game_answers.router, prefix="/api")
 app.include_router(users.router, prefix="/api")
+app.include_router(user_answers.router, prefix="/api")
 
 @app.get("/", tags=["Root"])
 def read_root():

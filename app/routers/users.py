@@ -1,10 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
+from app.crud.users import update_user_current_question
 # from app import schemas
 from app.database import get_db
 from app.crud import users
-from app.schemas.user_schema import User, UserCreate, UserUpdate
+from app.schemas.user_schema import User, UserCreate, UserUpdateCurrentQuestion
 
 router = APIRouter(tags=["Users"])
 
@@ -47,12 +48,13 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 """PUT"""
 
 
-@router.put("/users/{user_id}", response_model=User)
-def update_user(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
+@router.post("/update_current_question/{user_id}", response_model=User)
+def update_current_question(user_id: int, update_data: UserUpdateCurrentQuestion, db: Session = Depends(get_db)):
     """
-    Обновить информацию о пользователе.
+    Обновить currentgamequestionid для пользователя.
     """
-    return users.update_user(db, user_id=user_id, user=user)
+    user = update_user_current_question(db, user_id, update_data.currentgamequestionid)
+    return user
 
 
 """DELETE"""

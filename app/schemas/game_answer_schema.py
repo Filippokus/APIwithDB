@@ -9,6 +9,12 @@ class GameAnswer(BaseModelGame):
     is_correct: bool
 
 
+class GameAnswerInList(BaseModelGame):
+    answerid: int
+    questionid: int
+    is_correct: bool
+
+
 class GameAnswerCreate(BaseModelGame):
     answerid: int
     questionid: int

@@ -114,3 +114,49 @@ API будет доступен по адресу: `http://localhost:8000`, чт
 Запрос позволяет получать вопросы определенной главы, которые нумеруются строкой
 `one`, `two` и т.д.
 
+### 1.0.2  (13.06.2024)
+
+#### Изменена модель таблицы UserAnswer
+Атрибут answertext исключен.
+
+#### Добавлен маршурт изменения текущего состояния
+
+Добавлен POST-запрос, который обновляет текущий вопрос игрока  currentgamequestionid.
+Доступен по запросу `/api/update_current_question/{iser_id}`.
+
+#### Добавлен маршрут POST в UserAnswers
+
+Доступен по запросу `/api/submit_answers/`
+
+Пример ввода данных:
+```json
+{
+  "userid": 1,
+  "questionid": 5,
+  "answers": [
+    {
+      "answerid": 1,
+      "questionid": 5,
+      "is_correct": false
+    },
+    {
+      "answerid": 2,
+      "questionid": 5,
+      "is_correct": true
+    },
+    {
+      "answerid": 3,
+      "questionid": 5,
+      "is_correct": false
+    },
+    {
+      "answerid": 4,
+      "questionid": 5,
+      "is_correct": false
+    }
+  ]
+}
+```
+
+
+

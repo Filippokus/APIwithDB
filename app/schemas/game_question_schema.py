@@ -1,7 +1,7 @@
 from typing import Optional, List
 
 from app.schemas.base_schema import BaseModelGame
-from app.schemas.game_asnwer_schema import GameAnswer
+from app.schemas.game_answer_schema import GameAnswer
 
 class GameQuestion(BaseModelGame):
     questionid: int

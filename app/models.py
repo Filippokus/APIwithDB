@@ -56,7 +56,6 @@ class UserAnswer(Base):
 
     userid = Column(Integer, ForeignKey('petsitters.user.userid'), primary_key=True, index=True)
     questionid = Column(Integer, ForeignKey('petsitters.gamequestion.questionid'), primary_key=True, index=True)
-    answertext = Column(String, index=True)
     score = Column(Integer, index=True)
 
     user = relationship("User", back_populates="answers")

@@ -9,7 +9,7 @@ from app.database import get_db
 from app.crud.game_answers import get_game_answer, get_game_answers, create_game_answer, delete_game_answer, \
     delete_all_answers_for_question, create_multiple_game_answers
 
-from app.schemas.game_asnwer_schema import GameAnswer, GameAnswerCreate, GameAnswersCreate
+from app.schemas.game_answer_schema import GameAnswer, GameAnswerCreate, GameAnswersCreate
 
 router = APIRouter(tags=["Game Answers"])
 
