@@ -2,11 +2,9 @@ from typing import List
 
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-from app import schemas
 
 from app.models import GameAnswer
-from app.schemas import GameAnswerCreate
-
+from app.schemas.game_asnwer_schema import GameAnswerCreate
 
 def get_game_answers(db: Session):
     return db.query(GameAnswer).all()
@@ -30,7 +28,7 @@ def get_existing_answers(db: Session, answers: List[GameAnswerCreate]) -> set:
     existing_answers_set = {(answer.answerid, answer.questionid) for answer in existing_answers}
     return existing_answers_set
 
-def create_game_answer(db: Session, answer: schemas.GameAnswerCreate):
+def create_game_answer(db: Session, answer: GameAnswerCreate):
     from app.crud.game_questions import get_game_question_by_id
     
     if not get_game_question_by_id(db, questionid=answer.questionid):
@@ -50,7 +48,6 @@ def create_game_answer(db: Session, answer: schemas.GameAnswerCreate):
     db.commit()
     db.refresh(new_answer)
     return new_answer
-
 
 
 def create_multiple_game_answers(db: Session, answers: List[GameAnswerCreate]):
@@ -86,6 +83,3 @@ def delete_all_answers_for_question(db: Session, questionid: int):
     num_deleted = (db.query(GameAnswer).filter(GameAnswer.questionid == questionid)).delete()
     db.commit()
     return num_deleted
-
-
-

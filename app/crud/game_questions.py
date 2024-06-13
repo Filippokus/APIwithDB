@@ -3,11 +3,9 @@ from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from app import schemas
-from app.crud.game_answers import delete_all_answers_for_question
-from app.models import GameQuestion
-from app.schemas import GameQuestionCreate
 
+from app.models import GameQuestion
+from app.schemas.game_question_schema import GameQuestionCreate
 
 def get_game_question(db: Session, question_id: int):
     return db.query(GameQuestion).filter(GameQuestion.questionid == question_id).first()
@@ -25,7 +23,7 @@ def get_existing_questions(db: Session, questions: List[GameQuestionCreate]):
     existing_questions = db.query(GameQuestion).filter(GameQuestion.questiontext.in_(question_texts)).all()
     return set(question.questiontext for question in existing_questions)
 
-def create_game_question(db: Session, question: schemas.GameQuestionCreate):
+def create_game_question(db: Session, question: GameQuestionCreate):
     new_question = GameQuestion(
         questiontext=question.questiontext,
         chapter=question.chapter

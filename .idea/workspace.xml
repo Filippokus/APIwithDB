@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Удаление вопроса по id">
-      <change afterPath="$PROJECT_DIR$/app/schemas/game_asnwer_schema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/game_question_schema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/user_game_answer_chema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/user_schema.py" afterDir="false" />
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="commit. Подробности в README.md">
+      <change afterPath="$PROJECT_DIR$/app/routers/user_answers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/base_schema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_answers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/crud/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/user_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_answers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/backup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/backup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsonfiles/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/questions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/game_asnwer_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/game_asnwer_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/game_question_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/game_question_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user_game_answer_chema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_game_answer_chema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_schema.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +49,9 @@
     &quot;accountId&quot;: &quot;188ea037-8743-427e-aa0d-f54793f6ded9&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -55,16 +61,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.test_create_question.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_create_question.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ProjectsPycharm\APIwithDB\images" />
@@ -194,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718203433586</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="commit. Подробности в README.md">
+      <option name="closed" value="true" />
+      <created>1718221736525</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718221736526</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,7 +222,8 @@
     <MESSAGE value="Небольшое обновление, читать в README.md" />
     <MESSAGE value="README.md" />
     <MESSAGE value="Удаление вопроса по id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удаление вопроса по id" />
+    <MESSAGE value="commit. Подробности в README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit. Подробности в README.md" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

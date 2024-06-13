@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, UniqueConstraint, MetaData, \
-    PrimaryKeyConstraint
+from sqlalchemy import (Column, Integer, String,
+                        Boolean, ForeignKey, UniqueConstraint,
+                        MetaData)
 from sqlalchemy.orm import relationship
 from app.database import Base
 

@@ -1,23 +1,22 @@
 import json
 from typing import List
-
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from app import schemas
-from app.crud.game_answers import delete_all_answers_for_question
+
 from app.database import get_db
-from app.crud.game_questions import (get_game_questions, get_game_question, create_game_question,
-                                     create_multiple_game_questions, delete_game_question, questions_by_chapter)
-from app.schemas import GameQuestionsCreate
+from app.crud.game_questions import (get_game_questions, get_game_question,
+                                     create_game_question, create_multiple_game_questions,
+                                     delete_game_question, questions_by_chapter)
+from app.crud.game_answers import delete_all_answers_for_question
+from app.schemas.game_question_schema import GameQuestion, GameQuestionDetail, GameQuestionCreate, GameQuestionsCreate
 
 router = APIRouter(tags=["Game Questions"])
+
 
 """GET"""
 
 
-@router.get("/questions/", response_model=list[schemas.GameQuestion])
+@router.get("/questions/", response_model=list[GameQuestion])
 def read_game_all_questions(db: Session = Depends(get_db)):
     """
     Получить список всех вопросов игры.
@@ -28,7 +27,7 @@ def read_game_all_questions(db: Session = Depends(get_db)):
     return game_questions
 
 
-@router.get("/question/{question_id}/", response_model=schemas.GameQuestion)
+@router.get("/question/{question_id}/", response_model=GameQuestion)
 def read_game_question(question_id: int, db: Session = Depends(get_db)):
     """
     Получить конкретный вопрос игры по его идентификатору.
@@ -39,7 +38,7 @@ def read_game_question(question_id: int, db: Session = Depends(get_db)):
     return question
 
 
-@router.get("/questiondetail/{question_id}/", response_model=schemas.GameQuestionDetail)
+@router.get("/questiondetail/{question_id}/", response_model=GameQuestionDetail)
 def read_game_detail_question(question_id: int, db: Session = Depends(get_db)):
     """
     Получить подробную информацию о конкретном вопросе игры по его идентификатору.
@@ -50,7 +49,7 @@ def read_game_detail_question(question_id: int, db: Session = Depends(get_db)):
     return question_detail
 
 
-@router.get("/questions/chapter/{chapter}", response_model=List[schemas.GameQuestionDetail])
+@router.get("/questions/chapter/{chapter}", response_model=List[GameQuestionDetail])
 def get_questions_by_chapter(chapter: str, db: Session = Depends(get_db)):
     """
     Получить все вопросы для указанной главы.
@@ -61,14 +60,14 @@ def get_questions_by_chapter(chapter: str, db: Session = Depends(get_db)):
 """POST"""
 
 
-@router.post("/add_question/", response_model=schemas.GameQuestion)
-def create_game_question_endpoint(question: schemas.GameQuestionCreate, db: Session = Depends(get_db)):
+@router.post("/add_question/", response_model=GameQuestion)
+def create_game_question_endpoint(question: GameQuestionCreate, db: Session = Depends(get_db)):
     """
         Создать новый вопрос для игры.
     """
     return create_game_question(db, question=question)
 
-@router.post("/add_questions/", response_model=List[schemas.GameQuestionCreate])
+@router.post("/add_questions/", response_model=List[GameQuestionCreate])
 async def add_questions_from_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
     """
     Загрузить все вопросы в базу данных из файла
@@ -76,7 +75,7 @@ async def add_questions_from_file(file: UploadFile = File(...), db: Session = De
     try:
         file_content = await file.read()
         questions_data = json.loads(file_content)
-        question_schema = schemas.GameQuestionsCreate(**questions_data)
+        question_schema = GameQuestionsCreate(**questions_data)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid JSON file: {str(e)}")
 
@@ -86,7 +85,8 @@ async def add_questions_from_file(file: UploadFile = File(...), db: Session = De
 
 """DELETE"""
 
-@router.delete("delete_question/{questionid}", response_model=schemas.GameQuestion)
+
+@router.delete("delete_question/{questionid}", response_model=GameQuestion)
 def delete_game_question_endpoint(question_id: int, db: Session = Depends(get_db)):
     """
     Удалить вопрос по его идентификатору
