@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="commit. Подробности в README.md">
-      <change afterPath="$PROJECT_DIR$/app/routers/user_answers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/base_schema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_answers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/user_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user_answers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_answers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schems.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/game_asnwer_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/game_asnwer_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/game_question_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/game_question_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/user_game_answer_chema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_game_answer_chema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/user_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_schema.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718221736526</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit. Подробности в README.md">
+      <option name="closed" value="true" />
+      <created>1718279337649</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718279337649</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
