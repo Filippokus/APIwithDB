@@ -9,7 +9,7 @@ from app.crud.user_answers import create_user_answer
 from app.database import get_db
 
 
-router = APIRouter()
+router = APIRouter(tags=["User Answers"])
 
 
 @router.post("/submit_answers/", response_model=ScoreResponse)
