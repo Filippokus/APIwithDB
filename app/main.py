@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import game_questions, game_answers, users, user_answers
+from app.routers import game_questions, game_answers, users, user_answers, psychological_router
 from app.config import settings
 
 app = FastAPI()
@@ -28,6 +28,7 @@ app.include_router(game_questions.router, prefix="/api")
 app.include_router(game_answers.router, prefix="/api")
 app.include_router(users.router, prefix="/api")
 app.include_router(user_answers.router, prefix="/api")
+app.include_router(psychological_router.router, prefix="/api")
 
 @app.get("/", tags=["Root"])
 def read_root():
@@ -42,3 +43,4 @@ def read_root():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=settings.DEBUG)
+    

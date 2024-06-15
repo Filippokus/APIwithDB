@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Добавлен middleware">
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Добавлен тэг к UserAnswers">
+      <change afterPath="$PROJECT_DIR$/app/crud/psychology.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/psychological_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/pshylogic_answers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/test_psy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +51,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_create_question.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "Python.test_create_question.executor": "Run",
+    "Python.test_psy.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ProjectsPycharm\APIwithDB\images" />
@@ -209,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718280049930</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Добавлен тэг к UserAnswers">
+      <option name="closed" value="true" />
+      <created>1718478422371</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718478422371</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,7 +239,8 @@
     <MESSAGE value="Удаление вопроса по id" />
     <MESSAGE value="commit. Подробности в README.md" />
     <MESSAGE value="Добавлен middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен middleware" />
+    <MESSAGE value="Добавлен тэг к UserAnswers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен тэг к UserAnswers" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
