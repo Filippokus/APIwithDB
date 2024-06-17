@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:8000/api/send/psychoanswers"
+url = "http://127.0.0.1:8000/api/send_psycho_answers/"
 
 # Тестовые данные
 test_data_list = [

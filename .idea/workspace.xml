@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Добавлен тэг к UserAnswers">
-      <change afterPath="$PROJECT_DIR$/app/crud/psychology.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/psychological_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/pshylogic_answers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_psy.py" afterDir="false" />
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Добавлен POST запрос по обработке ответов на психологический тест. Без добавления в БД">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/psychology.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/psychology.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/pshylogic_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/pshylogic_answers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/test_psy.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/test_psy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +52,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.main.executor": "Run",
+    "Python.pshylogic_answers.executor": "Run",
     "Python.test_create_question.executor": "Run",
     "Python.test_psy.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -223,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718478422371</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Добавлен POST запрос по обработке ответов на психологический тест. Без добавления в БД">
+      <option name="closed" value="true" />
+      <created>1718485590013</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718485590013</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,7 +247,8 @@
     <MESSAGE value="commit. Подробности в README.md" />
     <MESSAGE value="Добавлен middleware" />
     <MESSAGE value="Добавлен тэг к UserAnswers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен тэг к UserAnswers" />
+    <MESSAGE value="Добавлен POST запрос по обработке ответов на психологический тест. Без добавления в БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен POST запрос по обработке ответов на психологический тест. Без добавления в БД" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
