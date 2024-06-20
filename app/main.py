@@ -24,10 +24,10 @@ app.add_middleware(
                    "Authorization"],
 )
 
-app.include_router(game_questions.router, prefix="/api")
-app.include_router(game_answers.router, prefix="/api")
-app.include_router(users.router, prefix="/api")
-app.include_router(user_answers.router, prefix="/api")
+app.include_router(game_questions_router.router, prefix="/api")
+app.include_router(game_answers_router.router, prefix="/api")
+app.include_router(users_router.router, prefix="/api")
+app.include_router(user_answers_router.router, prefix="/api")
 app.include_router(psychological_router.router, prefix="/api")
 
 @app.get("/", tags=["Root"])
