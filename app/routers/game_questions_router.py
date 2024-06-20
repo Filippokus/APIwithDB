@@ -4,10 +4,10 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.crud.game_questions import (get_game_questions, get_game_question,
-                                     create_game_question, create_multiple_game_questions,
-                                     delete_game_question, questions_by_chapter)
-from app.crud.game_answers import delete_all_answers_for_question
+from app.crud.game_questions_crud import (get_game_questions, get_game_question,
+                                          create_game_question, create_multiple_game_questions,
+                                          delete_game_question, questions_by_chapter)
+from app.crud.game_answers_crud import delete_all_answers_for_question
 from app.schemas.game_question_schema import GameQuestion, GameQuestionDetail, GameQuestionCreate, GameQuestionsCreate
 
 router = APIRouter(tags=["Game Questions"])

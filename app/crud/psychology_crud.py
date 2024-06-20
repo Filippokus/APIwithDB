@@ -1,6 +1,6 @@
 from typing import Dict
 
-from app.schemas.pshylogic_answers import ResponseData
+from app.schemas.psychology_answers_schema import ResponseData
 from fastapi import HTTPException
 
 # Вопросы по шкале экстраверсии

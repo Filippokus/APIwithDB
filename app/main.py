@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import game_questions, game_answers, users, user_answers, psychological_router
+from app.routers import game_questions_router, game_answers_router, users_router, user_answers_router, psychological_router
 from app.config import settings
 
 app = FastAPI()

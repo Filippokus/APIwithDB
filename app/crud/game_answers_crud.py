@@ -35,7 +35,7 @@ def get_existing_answers(db: Session, answers: List[GameAnswerCreate]) -> set:
     return existing_answers_set
 
 def create_game_answer(db: Session, answer: GameAnswerCreate):
-    from app.crud.game_questions import get_game_question_by_id
+    from app.crud.game_questions_crud import get_game_question_by_id
     
     if not get_game_question_by_id(db, questionid=answer.questionid):
         raise HTTPException(status_code=404, detail="Question not found")
