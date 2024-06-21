@@ -2,8 +2,7 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 
 from app.models import UserAnswer
-from app.schemas.user_game_answer_schema import UserAnswerCreate
-
+from app.schemas.user_game_answer_schema import UserAnswerCreate, ScoreResponse
 
 def create_user_answer(db: Session, user_answer: UserAnswerCreate):
 
@@ -25,3 +24,12 @@ def create_user_answer(db: Session, user_answer: UserAnswerCreate):
     db.commit()
     db.refresh(db_user_answer)
     return db_user_answer
+
+def get_user_score(db: Session, userid: int, questionid: int):
+    user_answer = db.query(UserAnswer).filter(
+        UserAnswer.userid == userid,
+        UserAnswer.questionid == questionid
+    ).first()
+    if user_answer:
+        return ScoreResponse(score=user_answer.score)
+    return None

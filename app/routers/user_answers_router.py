@@ -5,7 +5,7 @@ from app.crud.game_answers_crud import get_correct_answers
 from app.models import User, GameQuestion, GameAnswer, UserAnswer
 
 from app.schemas.user_game_answer_schema import UserAnswerList, ScoreResponse
-from app.crud.user_answers_crud import create_user_answer
+from app.crud.user_answers_crud import create_user_answer, get_user_score
 from app.database import get_db
 
 
@@ -73,3 +73,11 @@ def submit_answers(user_answers: UserAnswerList, db: Session = Depends(get_db)):
         )
     ):
         return {"score": score}
+
+
+@router.get("/score_answers/{userid}/{questionid}", response_model=ScoreResponse)
+def get_score(userid: int, questionid: int, db: Session = Depends(get_db)):
+    user_answer = get_user_score(db, userid, questionid)
+    if not user_answer:
+        raise HTTPException(status_code=404, detail="Answer not found")
+    return user_answer
