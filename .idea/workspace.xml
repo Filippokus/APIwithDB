@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="Добавлена обработка ответов на психологический тест. В результат выводится информация о темпераменте, экстраверсии, нейротизме, норма ответов.">
+    <list default="true" id="ddf0d3dc-6fa1-4d66-9f77-f7b325405a5e" name="Changes" comment="небольшой фикс">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_answers_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/game_questions_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/psychology.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/psychology_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/user_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user_answers_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/users_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/game_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_answers_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/game_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/game_questions_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/psychological_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/psychological_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/user_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/user_answers_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/users_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/pshylogic_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/psychology_answers_schema.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +243,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718654510262</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="обновлены названия файлов">
+      <option name="closed" value="true" />
+      <created>1718908056492</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718908056492</updated>
+    </task>
+    <task id="LOCAL-00022" summary="небольшой фикс">
+      <option name="closed" value="true" />
+      <created>1718908262051</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718908262051</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -274,7 +278,9 @@
     <MESSAGE value="Добавлен тэг к UserAnswers" />
     <MESSAGE value="Добавлен POST запрос по обработке ответов на психологический тест. Без добавления в БД" />
     <MESSAGE value="Добавлена обработка ответов на психологический тест. В результат выводится информация о темпераменте, экстраверсии, нейротизме, норма ответов." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена обработка ответов на психологический тест. В результат выводится информация о темпераменте, экстраверсии, нейротизме, норма ответов." />
+    <MESSAGE value="обновлены названия файлов" />
+    <MESSAGE value="небольшой фикс" />
+    <option name="LAST_COMMIT_MESSAGE" value="небольшой фикс" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
