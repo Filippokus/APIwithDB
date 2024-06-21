@@ -44,8 +44,9 @@ class User(Base):
     email = Column(String, index=True, unique=True)
     profession = Column(String, index=True)
     currentgamequestionid = Column(Integer, index=True)
-    
+
     answers = relationship("UserAnswer", back_populates="user")
+    test_results = relationship("UserTestResult", back_populates="user")
 
 class UserAnswer(Base):
     __tablename__ = 'useranswer'
@@ -60,3 +61,18 @@ class UserAnswer(Base):
 
     user = relationship("User", back_populates="answers")
     question = relationship("GameQuestion", back_populates="user_answers")
+
+class UserTestResult(Base):
+    __tablename__ = 'usertestresult'
+    __table_args__ = {'schema': 'petsitters'}
+
+    resultid = Column(Integer, primary_key=True, autoincrement=True, index=True)
+    userid = Column(Integer, ForeignKey('petsitters.user.userid'), nullable=False)
+    temperament = Column(String, index=True)
+    extraversion_result = Column(String, index=True)
+    neuroticism_result = Column(String, index=True)
+    lie_result = Column(String, index=True)
+
+    user = relationship("User", back_populates="test_results")
+
+
