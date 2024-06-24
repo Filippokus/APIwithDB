@@ -1,6 +1,6 @@
 from typing import List
 
-from app.schemas.base_schema import BaseModelGame
+from .base_schema import BaseModelGame
 
 class GameAnswer(BaseModelGame):
     answerid: int

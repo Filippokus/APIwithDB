@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app.crud.psychology_crud import analyze_responses
-from app.database import get_db
-from app.models import User, UserTestResult
-from app.schemas.psychology_answers_schema import ResponseData
+from ..crud.psychology_crud import analyze_responses
+from ..database import get_db
+from ..models import User, UserTestResult
+from ..schemas.psychology_answers_schema import ResponseData
 
 router = APIRouter(tags=["Psychological Questions"])
 

@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app.crud.game_answers_crud import get_correct_answers
-from app.models import User, GameQuestion, GameAnswer, UserAnswer
+from ..crud.game_answers_crud import get_correct_answers
+from ..models import User, GameQuestion, GameAnswer, UserAnswer
 
-from app.schemas.user_game_answer_schema import UserAnswerList, ScoreResponse
-from app.crud.user_answers_crud import create_user_answer, get_user_score
-from app.database import get_db
+from ..schemas.user_game_answer_schema import UserAnswerList, ScoreResponse
+from ..crud.user_answers_crud import create_user_answer, get_user_score
+from ..database import get_db
 
 
 router = APIRouter(tags=["User Answers"])

@@ -3,8 +3,8 @@ from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
-from app.models import GameAnswer
-from app.schemas.game_answer_schema import GameAnswerCreate
+from ..models import GameAnswer
+from ..schemas.game_answer_schema import GameAnswerCreate
 
 def get_game_answers(db: Session):
     return db.query(GameAnswer).all()

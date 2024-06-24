@@ -1,7 +1,7 @@
 from typing import List
 
-from app.schemas.base_schema import BaseModelGame
-from app.schemas.game_answer_schema import GameAnswerInList
+from .base_schema import BaseModelGame
+from .game_answer_schema import GameAnswerInList
 
 
 class UserAnswerCreate(BaseModelGame):

@@ -2,7 +2,7 @@ from sqlalchemy import (Column, Integer, String,
                         Boolean, ForeignKey, UniqueConstraint,
                         MetaData)
 from sqlalchemy.orm import relationship
-from app.database import Base
+from .database import Base
 
 metadata = MetaData(schema='petsitters')
 

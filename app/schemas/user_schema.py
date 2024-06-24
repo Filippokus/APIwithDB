@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import EmailStr
 
-from app.schemas.base_schema import BaseModelGame
+from .base_schema import BaseModelGame
 
 class User(BaseModelGame):
     userid: int

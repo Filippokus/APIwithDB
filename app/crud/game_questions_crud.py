@@ -4,8 +4,8 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
-from app.models import GameQuestion
-from app.schemas.game_question_schema import GameQuestionCreate
+from ..models import GameQuestion
+from ..schemas.game_question_schema import GameQuestionCreate
 
 def get_game_question(db: Session, question_id: int):
     return db.query(GameQuestion).filter(GameQuestion.questionid == question_id).first()

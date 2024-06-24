@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 
-from app.models import UserAnswer
-from app.schemas.user_game_answer_schema import UserAnswerCreate, ScoreResponse
+from ..models import UserAnswer
+from ..schemas.user_game_answer_schema import UserAnswerCreate, ScoreResponse
 
 def create_user_answer(db: Session, user_answer: UserAnswerCreate):
 
