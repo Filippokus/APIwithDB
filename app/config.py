@@ -14,7 +14,8 @@ class Settings(BaseSettings):
     POSTGRES_DEBUG: bool = True
 
     class Config:
-        env_file = Path(__file__).resolve().parent.parent / ".env"
+        env_file = Path(__file__).resolve().parent.parent.parent / ".env"
+        print(f"Loading .env from {env_file}")  # Добавьте эту строку для отладки
 
 
 settings = Settings()
